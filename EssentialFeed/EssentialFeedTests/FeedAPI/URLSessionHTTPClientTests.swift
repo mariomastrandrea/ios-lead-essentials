@@ -76,7 +76,9 @@ final class URLSessionHTTPClientTests: XCTestCase {
     // MARK: - Helpers
     
     private func makeSUT() -> URLSessionHTTPClient {
-        return URLSessionHTTPClient()
+        let sut = URLSessionHTTPClient()
+        trackForMemoryLeaks(sut)
+        return sut
     }
     
     private static func assertEqualNSErrors(_ err1: NSError, _ err2: NSError, file: StaticString = #filePath, line: UInt = #line) {
