@@ -80,7 +80,7 @@ xcuserdata
 .*.sw[nop]
 *.xcscmblueprint
 /default.profraw
-*.xcodeproj
+# *.xcodeproj
 Utilities/Docker/*.tar.gz
 .swiftpm
 Package.resolved
@@ -135,7 +135,7 @@ iOSInjectionProject/
 /*.gcno
 
 ### Xcode Patch ###
-*.xcodeproj/*
+# *.xcodeproj/*
 !*.xcodeproj/project.pbxproj
 !*.xcodeproj/xcshareddata/
 !*.xcworkspace/contents.xcworkspacedata
