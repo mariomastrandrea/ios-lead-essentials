@@ -140,12 +140,12 @@ final class LoadFeedFromRemoteUseCaseTests: XCTestCase {
         description: String? = nil,
         location: String? = nil,
         imageURL: URL
-    ) -> (model: FeedItem, json: [String: Any]) {
-        let item = FeedItem(
+    ) -> (model: FeedImage, json: [String: Any]) {
+        let image = FeedImage(
             id: id,
             description: description,
             location: location,
-            imageURL: imageURL
+            url: imageURL
         )
         
         let json = [
@@ -155,7 +155,7 @@ final class LoadFeedFromRemoteUseCaseTests: XCTestCase {
             "image": imageURL.absoluteString
         ].compactMapValues { $0 }
         
-        return (model: item, json: json)
+        return (model: image, json: json)
     }
     
     func makeItemsJSON(_ items: [[String: Any]]) -> Data {
