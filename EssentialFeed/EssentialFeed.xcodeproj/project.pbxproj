@@ -28,6 +28,7 @@
 		80AEA0FA2C8AF29900C11770 /* XCTestCase+FailableDeleteFeedStoreSpecs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AEA0F92C8AF29900C11770 /* XCTestCase+FailableDeleteFeedStoreSpecs.swift */; };
 		80AEA0FD2C8AFB4600C11770 /* CoreDataFeedStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AEA0FC2C8AFB4600C11770 /* CoreDataFeedStoreTests.swift */; };
 		80AEA0FF2C8AFBDC00C11770 /* CoreDataFeedStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AEA0FE2C8AFBDC00C11770 /* CoreDataFeedStore.swift */; };
+		80AEA1122C8B5EB500C11770 /* FeedStore.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 80AEA1102C8B5EB500C11770 /* FeedStore.xcdatamodeld */; };
 		80BDE1722C174816007D19CD /* EssentialFeed.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80BDE1692C174816007D19CD /* EssentialFeed.framework */; };
 		80BDE1782C174816007D19CD /* EssentialFeed.h in Headers */ = {isa = PBXBuildFile; fileRef = 80BDE16C2C174816007D19CD /* EssentialFeed.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		80C16EB92C7C8B1D0028D7CE /* FeedStoreSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C16EB82C7C8B1D0028D7CE /* FeedStoreSpy.swift */; };
@@ -82,6 +83,7 @@
 		80AEA0F92C8AF29900C11770 /* XCTestCase+FailableDeleteFeedStoreSpecs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+FailableDeleteFeedStoreSpecs.swift"; sourceTree = "<group>"; };
 		80AEA0FC2C8AFB4600C11770 /* CoreDataFeedStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataFeedStoreTests.swift; sourceTree = "<group>"; };
 		80AEA0FE2C8AFBDC00C11770 /* CoreDataFeedStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataFeedStore.swift; sourceTree = "<group>"; };
+		80AEA1112C8B5EB500C11770 /* FeedStore.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FeedStore.xcdatamodel; sourceTree = "<group>"; };
 		80BDE1692C174816007D19CD /* EssentialFeed.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EssentialFeed.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		80BDE16C2C174816007D19CD /* EssentialFeed.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EssentialFeed.h; sourceTree = "<group>"; };
 		80BDE1712C174816007D19CD /* EssentialFeedTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EssentialFeedTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -260,6 +262,7 @@
 				802B56BE2C886C64008CB49E /* FeedCachePolicy.swift */,
 				80AEA0EF2C89D8A700C11770 /* CodableFeedStore.swift */,
 				80AEA0FE2C8AFBDC00C11770 /* CoreDataFeedStore.swift */,
+				80AEA1102C8B5EB500C11770 /* FeedStore.xcdatamodeld */,
 			);
 			path = FeedCache;
 			sourceTree = "<group>";
@@ -408,6 +411,7 @@
 				80D522392C7A5A640006B7AA /* RemoteFeedItem.swift in Sources */,
 				802B56BF2C886C64008CB49E /* FeedCachePolicy.swift in Sources */,
 				8005C34E2C21CAF300E720C1 /* RemoteFeedLoader.swift in Sources */,
+				80AEA1122C8B5EB500C11770 /* FeedStore.xcdatamodeld in Sources */,
 				80D5223B2C7A5AE90006B7AA /* LocalFeedImage.swift in Sources */,
 				80D522372C78D6490006B7AA /* FeedStore.swift in Sources */,
 				80D522352C78D5840006B7AA /* LocalFeedLoader.swift in Sources */,
@@ -768,6 +772,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		80AEA1102C8B5EB500C11770 /* FeedStore.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				80AEA1112C8B5EB500C11770 /* FeedStore.xcdatamodel */,
+			);
+			currentVersion = 80AEA1112C8B5EB500C11770 /* FeedStore.xcdatamodel */;
+			name = FeedStore.xcdatamodeld;
+			path = "/Users/mariomastrandrea/Desktop/training/iOSLeadEssentials/repo/ios-lead-essentials/EssentialFeed/EssentialFeed/FeedCache/FeedStore.xcdatamodeld";
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 80BDE1602C174816007D19CD /* Project object */;
 }
