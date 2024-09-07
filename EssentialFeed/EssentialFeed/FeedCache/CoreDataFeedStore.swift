@@ -25,17 +25,17 @@ public final class CoreDataFeedStore: FeedStore {
                 
                 if let cache = try context.fetch(request).first {
                     completion(.found(
-                        feed: cache.feed!
+                        feed: cache.feed
                                 .compactMap { $0 as? ManagedFeedImage }
                                 .map {
                                     LocalFeedImage(
-                                        id: $0.id!,
+                                        id: $0.id,
                                         description: $0.imageDescription,
                                         location: $0.location,
-                                        url: $0.url!
+                                        url: $0.url
                                     )
                                 } ,
-                        timestamp: cache.timestamp!
+                        timestamp: cache.timestamp
                     ))
                 }
                 else {
@@ -110,3 +110,20 @@ private extension NSManagedObjectModel {
                 .flatMap { NSManagedObjectModel(contentsOf: $0) }
     }
 }
+
+@objc(ManagedCache)
+private class ManagedCache: NSManagedObject {
+    @NSManaged var timestamp: Date
+    @NSManaged var feed: NSOrderedSet
+}
+
+@objc(ManagedFeedImage)
+private class ManagedFeedImage: NSManagedObject {
+    @NSManaged var id: UUID
+    @NSManaged var imageDescription: String?
+    @NSManaged var location: String?
+    @NSManaged var url: URL
+    @NSManaged var cache: ManagedCache
+}
+
+          
