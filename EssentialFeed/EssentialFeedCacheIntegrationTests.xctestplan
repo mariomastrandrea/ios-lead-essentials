@@ -1,0 +1,24 @@
+{
+  "configurations" : [
+    {
+      "id" : "6D7C2885-30EF-4301-9664-CF567FFF74FB",
+      "name" : "Test Scheme Action",
+      "options" : {
+        "testExecutionOrdering" : "random"
+      }
+    }
+  ],
+  "defaultOptions" : {
+
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:EssentialFeed.xcodeproj",
+        "identifier" : "8075ACAD2C8CA32800C9462C",
+        "name" : "EssentialFeedCacheIntegrationTests"
+      }
+    }
+  ],
+  "version" : 1
+}
