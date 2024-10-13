@@ -86,6 +86,18 @@ final class FeedViewControllerTests: XCTestCase {
         XCTAssertEqual(sut.refreshControl?.isRefreshing, false)
     }
     
+    func test_pullToRefresh_showsLoadingIndicator() {
+        let (sut, loader) = makeSUT()
+        
+        sut.simulateAppearance()
+        loader.completeFeedLoading()
+        sut.refreshControl?.simulatePullToRefresh()
+        
+        XCTAssertEqual(sut.refreshControl?.isRefreshing, true)
+    }
+    
+    
+    
     // MARK: - Helpers
     
     private func makeSUT(file: StaticString = #filePath, line: UInt = #line) -> (sut: FeedViewController, loader: LoaderSpy) {
@@ -155,6 +167,7 @@ private extension UIRefreshControl {
         allTargets.forEach { target in
             actions(forTarget: target, forControlEvent: .valueChanged)?.forEach { action in
                 (target as NSObject).perform(Selector(action))
+                self.beginRefreshing()
             }
         }
     }
