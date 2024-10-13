@@ -11,6 +11,8 @@
 		8005C3462C21BF7700E720C1 /* FeedLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8005C3452C21BF7700E720C1 /* FeedLoader.swift */; };
 		8005C34B2C21C0F000E720C1 /* LoadFeedFromRemoteUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8005C34A2C21C0F000E720C1 /* LoadFeedFromRemoteUseCaseTests.swift */; };
 		8005C34E2C21CAF300E720C1 /* RemoteFeedLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8005C34D2C21CAF300E720C1 /* RemoteFeedLoader.swift */; };
+		8012B9B22CBC1D8C0082B408 /* EssentialFeed.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80BDE1692C174816007D19CD /* EssentialFeed.framework */; };
+		8012B9B32CBC1D8C0082B408 /* EssentialFeed.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 80BDE1692C174816007D19CD /* EssentialFeed.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		802B56B92C884D14008CB49E /* ValidateFeedCacheUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802B56B82C884D14008CB49E /* ValidateFeedCacheUseCaseTests.swift */; };
 		802B56BB2C885C3D008CB49E /* FeedCacheTestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802B56BA2C885C3D008CB49E /* FeedCacheTestHelpers.swift */; };
 		802B56BD2C885CF6008CB49E /* SharedTestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802B56BC2C885CF6008CB49E /* SharedTestHelpers.swift */; };
@@ -52,6 +54,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		8012B9B42CBC1D8C0082B408 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 80BDE1602C174816007D19CD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 80BDE1682C174816007D19CD;
+			remoteInfo = EssentialFeed;
+		};
 		8075ACB32C8CA32800C9462C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 80BDE1602C174816007D19CD /* Project object */;
@@ -81,6 +90,20 @@
 			remoteInfo = EssentialFeed;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		8012B9B62CBC1D8C0082B408 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				8012B9B32CBC1D8C0082B408 /* EssentialFeed.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		8005C3432C21BED000E720C1 /* FeedImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedImage.swift; sourceTree = "<group>"; };
@@ -149,6 +172,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8012B9B22CBC1D8C0082B408 /* EssentialFeed.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -205,6 +229,13 @@
 				80C92F722C2606CA007178B6 /* URLSessionHTTPClient.swift */,
 			);
 			path = FeedAPI;
+			sourceTree = "<group>";
+		};
+		8012B9B12CBC1D8C0082B408 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		8075ACA12C8C9D8700C9462C /* Infrastructure */ = {
@@ -280,6 +311,7 @@
 				8075ACAF2C8CA32800C9462C /* EssentialFeedCacheIntegrationTests */,
 				80AE47342CB97B8A00067F7C /* EssentialFeediOS */,
 				80AE473E2CB97B8A00067F7C /* EssentialFeediOSTests */,
+				8012B9B12CBC1D8C0082B408 /* Frameworks */,
 				80BDE16A2C174816007D19CD /* Products */,
 			);
 			sourceTree = "<group>";
@@ -407,10 +439,12 @@
 				80AE472F2CB97B8A00067F7C /* Sources */,
 				80AE47302CB97B8A00067F7C /* Frameworks */,
 				80AE47312CB97B8A00067F7C /* Resources */,
+				8012B9B62CBC1D8C0082B408 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				8012B9B52CBC1D8C0082B408 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				80AE47342CB97B8A00067F7C /* EssentialFeediOS */,
@@ -682,6 +716,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		8012B9B52CBC1D8C0082B408 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 80BDE1682C174816007D19CD /* EssentialFeed */;
+			targetProxy = 8012B9B42CBC1D8C0082B408 /* PBXContainerItemProxy */;
+		};
 		8075ACB42C8CA32800C9462C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 80BDE1682C174816007D19CD /* EssentialFeed */;
