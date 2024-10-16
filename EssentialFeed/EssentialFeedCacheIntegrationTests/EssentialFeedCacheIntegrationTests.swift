@@ -23,14 +23,14 @@ final class EssentialFeedCacheIntegrationTests: XCTestCase {
     }
 
     func test_load_deliversNoItemsOnEmptyCache() throws {
-        let sut = try makeSUT()
+        let sut = makeSUT()
         
         expect(sut, toLoad: [])
     }
     
     func test_load_deliversItemsSavedOnASeparateInstance() throws {
-        let sutToPerformSave = try makeSUT()
-        let sutToPerformLoad = try makeSUT()
+        let sutToPerformSave = makeSUT()
+        let sutToPerformLoad = makeSUT()
         let feed = uniqueImageFeed().models
         
         save(feed, with: sutToPerformSave)
@@ -39,9 +39,9 @@ final class EssentialFeedCacheIntegrationTests: XCTestCase {
     }
     
     func test_save_overridesItemsSavedOnASeparateInstance() throws {
-        let sutToPerformFirstSave = try makeSUT()
-        let sutToPerformLastSave = try makeSUT()
-        let sutToPerformLoad = try makeSUT()
+        let sutToPerformFirstSave = makeSUT()
+        let sutToPerformLastSave = makeSUT()
+        let sutToPerformLoad = makeSUT()
         let firstFeed = uniqueImageFeed().models
         let latestFeed = uniqueImageFeed().models
         
@@ -53,11 +53,11 @@ final class EssentialFeedCacheIntegrationTests: XCTestCase {
     
     // - MARK: Helpers
     
-    private func makeSUT(file: StaticString = #filePath, line: UInt = #line) throws -> LocalFeedLoader {
+    private func makeSUT(file: StaticString = #filePath, line: UInt = #line) -> LocalFeedLoader {
         let storeBundle = Bundle(for: CoreDataFeedStore.self)
         let storeURL = testSpecificStoreURL()
         
-        let store = try CoreDataFeedStore(storeURL: storeURL, bundle: storeBundle)
+        let store = try! CoreDataFeedStore(storeURL: storeURL, bundle: storeBundle)
         let sut = LocalFeedLoader(store: store, currentDate: Date.init)
         
         trackForMemoryLeaks(store, file: file, line: line)
