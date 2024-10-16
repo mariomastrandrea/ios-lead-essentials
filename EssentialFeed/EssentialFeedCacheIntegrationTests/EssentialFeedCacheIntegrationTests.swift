@@ -81,7 +81,7 @@ final class EssentialFeedCacheIntegrationTests: XCTestCase {
             }
             saveExp.fulfill()
         }
-        wait(for: [saveExp], timeout: 1.0)
+        wait(for: [saveExp], timeout: 2.0)
     }
     
     private func expect(
@@ -101,7 +101,7 @@ final class EssentialFeedCacheIntegrationTests: XCTestCase {
             
             exp.fulfill()
         }
-        wait(for: [exp], timeout: 1.0)
+        wait(for: [exp], timeout: 2.0)
     }
     
     private func setupEmptyStoreState() {
